@@ -1,0 +1,259 @@
+@import 'variables';
+@import 'mixins';
+@import 'media';
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-stack;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+.container {
+  @include responsive-container;
+}
+
+.text-center {
+  @include text-center;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: $h1-mobile-font-size;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-top: 40px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 100%; // Ajuste para dispositivos móviles
+  @include card-style;
+
+  &:hover {
+    transform: scale($card-hover-scale);
+  }
+
+  img {
+    border-bottom: 1px solid $border-color;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+
+  .card-body {
+    padding: $card-padding;
+  }
+
+  .card-title {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 1em;
+    color: $primary-text-color;
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna en móviles */
+  gap: $gap-size;
+  margin-top: 40px;
+}
+
+.product-card{
+  width: 100%; // Ajuste para dispositivos móviles
+  @include card-style;
+
+  &:hover {
+    transform: scale($card-hover-scale);
+  }
+
+  img {
+    border-bottom: 1px solid $border-color;
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+  }
+
+  .card-body {
+    padding: $card-padding;
+  }
+
+  .card-title {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 1em;
+    color: $primary-text-color;
+  }
+}
+
+.contact-form {
+  background-color: $form-background;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  padding: $form-padding;
+
+  h1 {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .form-group {
+      margin-bottom: 15px;
+
+      label {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+      }
+
+      input,
+      textarea {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid $input-border;
+          border-radius: $border-radius;
+          box-sizing: border-box;
+
+          &:focus {
+              border-color: $input-focus-border;
+              outline: none;
+          }
+      }
+
+      textarea {
+          resize: vertical;
+      }
+  }
+
+  button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: $border-radius;
+      background-color: $button-background;
+      color: $button-text;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+          background-color: $button-hover-background;
+          color: $button-hover-text;
+      }
+  }
+}
+
+.about-us {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-bottom: 20px;
+}
+
+.staff {
+  .staff-images {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+
+      img {
+          width: 100%;
+          max-width: 200px;
+          border-radius: $border-radius;
+          box-shadow: $box-shadow;
+      }
+  }
+}
+
+.location {
+  .map {
+      iframe {
+          width: 100%;
+          max-width: 100%;
+          border: 0;
+          border-radius: $border-radius;
+          box-shadow: $box-shadow;
+      }
+  }
+}
+
+.comments {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  h1 {
+      color: $heading-color;
+      margin-bottom: 20px;
+  }
+
+  .comment {
+      margin-bottom: 20px;
+      padding: $comment-padding;
+      border-bottom: 1px solid $comment-border-color;
+
+      &:last-child {
+          border-bottom: none;
+      }
+
+      .comment-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+
+          .customer-img {
+              width: $customer-img-size;
+              height: $customer-img-size;
+              border-radius: 50%;
+              object-fit: cover;
+              margin-right: 15px;
+          }
+
+          .customer-info {
+              h2 {
+                  margin: 0;
+                  color: $text-color;
+              }
+
+              p {
+                  margin: 5px 0 0;
+                  color: #ffcc00; // Estilo para estrellas doradas
+              }
+          }
+        }
+      }
+}
+
+footer {
+  background-color: $main-bg-color;
+  @include text-center;
+  padding: 10px;
+  margin-top: auto;
+}

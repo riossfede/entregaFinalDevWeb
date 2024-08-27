@@ -1,0 +1,15 @@
+@mixin card-style {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  transition: transform 0.2s;
+}
+
+@mixin responsive-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@mixin text-center {
+  text-align: center;
+}
